@@ -1,457 +1,264 @@
-@import "utils/mixins"
-@import "utils/reset"
-
-@include fontFace('OpenSans', '../fonts/OpenSans')
-@include fontFace('OpenSans-Bold', '../fonts/OpenSans-Bold')
-
-$positive-color:                #fff
-$negative-color:                #000
-$accent-color:                  #48a9e9
-$secondary-accent-color:        #3179a9
-$dark-accent-color:             #06092a
-$dark-accent-color-07-opacity:  rgba(6, 9, 42, 0.7)
-$divider-color:                 #e9eff1
-$accent-table-color-1:          #c5ab18
-$accent-table-color-2:          #b5b7c9
-$accent-table-color-3:          #c08b57
-$accent-table-color-4:          #20daa8
-$secondary-text-color:          #b0afaf
-
-html
-    font-size: 20px
-    height: 100%
-    width: 100%
-
 body
-    font-family: OpenSans
-    color: $negative-color
-    height: 100%
-    width: 100%
-    font-size: 0.8rem
+    background-image: url(../img/image4-1.jpg)
+    background-position: center
+    background-repeat: no-repeat
+    min-height: 100vh
+    background-size: cover
+    color: #fff
+    font-weight: 500
+    font-family: 'EB Garamond', serif
 
-section
-    padding: 3rem 0
+.headerInner
+    display: flex
+    justify-content: space-between
 
-h1
-    font-family: OpenSans-Bold
-    font-size: 2.75rem
-    padding-bottom: 2rem
+.headerSocial
+    display: flex
+    flex-direction: column
 
-    @media screen and ( max-width: 500px )
-        font-size: 1.5rem
-
-h2
-    font-family: OpenSans
-    font-size: 1.25rem
-
-    @media screen and ( max-width: 500px )
-        font-size: 1rem
-
-a
-    color: black
+.headerSocial-tel
+    font-size: 22px
+    font-weight: normal
+    color: #fff
     text-decoration: none
-    transition: 400ms
-
     &:hover
-        color: green
-        text-decoration: underline
-        opacity: 0.5
+        text-decoration: none
+        color: #cee997
 
-.accent-color
-    color: $accent-color
+.headerSocial-icons
+    display: flex
+    justify-content: space-between
+    margin-top: 10px
 
-.button
-    display: inline-block
-    background-color: $accent-color
-    color: red
-    padding: 0.5rem 1.5rem
-    border-radius: 0.25rem
-    box-shadow: 0 0.65rem 0.65rem 0 rgba(0, 0, 0, 0.1)
-    cursor: pointer
-    transition: 400ms
+.socialLink
+    display: flex
+    width: 40px
+    height: 40px
+    margin-right: 4px
+    background-color: transparent
+    transition: background .4s linear
+    filter: brightness(80%)
 
-    &:hover
-        background-color: $secondary-accent-color
-        box-shadow: none
-        opacity: 1
-        color: #fff
-        font-weight: 900
+.socialLink:hover
+    filter: contrast(100%)
 
+.socialLink:hover .socialIcon
+    fill: #e84545
 
-.header-block
-    padding-bottom: 10rem
-    background: url(../img/bg-1.jpg)
-    background-position: center
-    background-repeat: no-repeat
-    background-size: cover
+.socialIcon
+    height: 30px
 
-    @media screen and ( max-width: 500px )
-        padding-bottom: 3rem
+.main
+    position: relative
+    // height: 500px
 
-.header-block__nav
-    padding-top: 1rem
-
-    .logo,
-    .nav,
-    .button-container
-        display: flex
-        align-items: center
-        justify-content: flex-start
-
-        img
-            width: 10rem
-
-    .nav
-        justify-content: center
-
-        @media screen and ( max-width: 500px )
-            display: none
-
-        ul
-            li
-                display: inline
-                margin-right: 2rem
-                font-size: 0.8rem
-
-                &:last-child
-                    margin-right: 0
-
-                a
-                    color: red
-
-    .button-container
-        justify-content: flex-end
-
-.header-block__title
-    padding-top: 8rem
-
-    @media screen and ( max-width: 500px )
-        padding-top: 0
-
-    .title
-
-        h1,
-        h2
-            color: $positive-color
-
-        h1
-            padding-top: 2rem
-
-        .button
-            margin-top: 2rem
-
-    .rating
-        display: flex
-        align-items: center
-        justify-content: center
-
-        @media screen and ( max-width: 500px )
-            display: block
-            margin-top: 2rem
-
-        .rating__table-container
-            background-color: $dark-accent-color-07-opacity
-            border-radius: 0.25rem
-            padding: 1rem
-
-            .table-title
-                display: block
-                text-align: center
-                font-family: OpenSans-Bold
-                color: $positive-color
-                padding-bottom: 0.5rem
-
-                @media screen and ( max-width: 500px )
-                    font-size: 0.7rem
-
-            table
-                color: $positive-color
-                font-size: 0.55rem
-
-                tr
-
-                    td
-                        padding: 0.3rem 0.5rem
-
-                        @media screen and ( max-width: 500px )
-                            text-align: center
-
-                        &:first-child
-                            text-align: center
-
-                        &:nth-child(2),
-                        &:nth-child(3)
-                            
-                            @media screen and ( max-width: 500px )
-                                display: none
-
-                        &:nth-child(4),
-                        &:nth-child(5)
-                            color: $accent-table-color-4
-
-                        .table__leader-number-1,
-                        .table__leader-number-2,
-                        .table__leader-number-3
-                            width: 1rem;
-                            height: 1rem;
-                            display: inline-block;
-                            border-radius: 50%
-
-                        .table__leader-number-1
-                            color: $accent-table-color-1
-                            border: 0.05rem solid $accent-table-color-1
-
-                        .table__leader-number-2
-                            color: $accent-table-color-2
-                            border: 0.05rem solid $accent-table-color-2
-
-                        .table__leader-number-3
-                            color: $accent-table-color-3
-                            border: 0.05rem solid $accent-table-color-3
-                            
-
-                    th
-                        border-top: 0.05rem solid $positive-color
-                        border-bottom: 0.05rem solid $positive-color
-                        padding: 0.5rem 0.5rem
-                        font-weight: 400
-
-                        @media screen and ( max-width: 500px )
-                            text-align: center
-
-                        &:nth-child(2),
-                        &:nth-child(3)
-                            
-                            @media screen and ( max-width: 500px )
-                                display: none
-
-.points-block
-    background-color: $divider-color
-
-    .points
-
-        .points__point-container
-            display: flex
-            flex-direction: column
-            align-items: center
-            justify-content: center
-            padding: 1.5rem
-            text-align: center
-            background: $positive-color
-            border-radius: 0.5rem
-            box-shadow: 0 1.3rem 1.9rem 0 rgba(0, 0, 0, 0.14)
-            transition: 400ms
-
-            &:hover
-                box-shadow: none
-
-            @media screen and ( max-width: 500px )
-                margin-bottom: 1rem
-                padding: 1rem
-
-            span
-                padding-top: 1.5rem
-
-    .button-container
-        text-align: center
-        margin-top: 2rem
-
-        @media screen and ( max-width: 500px )
-            margin-top: 0
-
-.case-block
-    background: url(../img/bg-2.jpg)
-    background-position: center
-    background-repeat: no-repeat
-    background-size: cover
-
-    h1
-        color: $positive-color
-        text-align: center
-
-    .content__text-container
-        padding: 3rem
-        background: $dark-accent-color-07-opacity
-        border-radius: 0.5rem
-        color: $positive-color
-
-        @media screen and ( max-width: 500px )
-            padding: 1rem
-
-        p
-            padding-bottom: 1.5rem
-
-            &:nth-child(3)
-                width: 70%
-
-                @media screen and ( max-width: 500px )
-                    width: 100%
-
-    img
+.mainTitle h1
+    font-size: 40px
+    margin-top: 50px
+    position: relative
+    &::before
+        content: ""
+        height: 2px
+        width: 200px
+        z-index: 1
+        background-color: #95d612
         position: absolute
-        bottom: -3rem
-        right: -24rem
+        top: -20%
 
-        @media screen and ( max-width: 1300px )
-            width: 33rem
-            right: -16rem
+.mainSupTitle h2
+    font-size: 29px
+    margin-top: 50px
+    margin-bottom: 100px
 
-        @media screen and ( max-width: 500px )
+.mainscreenbutton
+    text-transform: uppercase
+    font-size: 24px
+    padding: 15px 30px
+    transition: 0.3s
+    font-weight: 700
+    background: #95d612
+    border-radius: 5px
+    color: #fff
+    text-decoration: none
+    &:hover
+        background: #7aaf10
+        color: #fff
+        text-decoration: none
+    &:active, &:visited, &:focus
+        outline: none
+        border-color: transparent
+        -webkit-box-shadow: none
+        box-shadow: none
+ 
+.popup-container
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(54, 54, 54, 0.8)
+    display: block
+    z-index: 1
+    color: #000
+
+.popup-inner
+    position: fixed
+    padding: 50px
+    left: 50%
+    top: 50%
+    margin-left: -310px
+    margin-top: -238px
+
+.popup-subtitle
+    display: block
+    font-weight: normal
+    color: #000
+
+.sectionform-form
+    background: #ffffff
+    box-sizing: border-box
+    max-width: 620px
+    min-width: 550px
+    position: relative
+    z-index: 1
+
+.popup-close
+    position: absolute
+    top: 20px
+    right: 20px
+    width: 30px
+    z-index: 1
+    cursor: pointer
+
+.sectionform-els
+    padding-left: 30px
+    margin: 20px 0 0 2px
+    border-left: 4px solid #eaf3f8
+    position: relative
+    z-index: 2
+
+.input
+    border: 0
+    background: #eaf3f8
+    padding: 10px 20px
+    margin-bottom: 10px
+    width: 90%
+    box-sizing: border-box
+    outline: none
+    line-height: 16px
+
+.input:hover, .input:focus
+    background: #d9f1ff
+
+.inputsubmit
+    border: 0
+    outline: none
+    color: #FFF
+    text-transform: uppercase
+    padding: 10px 30px
+    background: #3E6129
+    font-size: 14px
+    font-family: "MuseoSansRegular"
+    cursor: pointer
+
+.agreement
+    font-size: 12px
+    line-height: 1.3
+    margin-top: 10px
+
+.sectionheader
+    text-transform: uppercase
+
+.tnh
+    text-align: center
+    font-size: 24px
+    font-style: italic
+    font-weight: bold
+
+.tnh-text
+    margin-top: 30px
+
+@media screen and ( max-width: 993px )
+    .mainTitle h1
+        font-size: 30px
+
+    .mainSupTitle h2
+        font-size: 25px
+
+@media screen and ( max-width: 765px )
+    body
+        background-image: url(../img/image3-2.jpg)
+        background-position-x: 75%
+
+    .mainTitle h1
+        font-size: 25px
+
+    .mainSupTitle h2
+        font-size: 22px
+
+    .headerSocial-tel
+        font-size: 20px
+
+    .mainscreenbutton
+        font-size: 20px
+        padding: 10px 25px
+        font-weight: 500
+
+    .popup-inner
+        padding: 15px
+        margin-left: -282px
+
+    .sectionform-form
+        width: 460px
+
+@media screen and ( max-width: 576px )
+    .main
+        text-align: center
+        width: 90%
+        margin: 20px auto 0
+        margin-bottom: 100px
+        padding-bottom: 20px
+
+    .mainTitle h1
+        &::before
             display: none
 
-    .button
-        margin-top: 1rem
+    .mainSupTitle h2
+        margin-bottom: 50px
 
-.offers-block
-    background-color: $divider-color
+    .popup-inner
+        margin-left: -167px
 
-    h1
-        text-align: center
-        color: $negative-color
+    .sectionform-form
+        min-width: 0
+        width: 305px
 
-    .offers__offer-container
-        display: flex
+    .sectionform-tile
+        font-size: 20px
+
+@media screen and ( max-width: 420px )
+    .headerInner
+        align-items: center
         flex-direction: column
-        transition: 400ms
+        justify-content: normal
 
-        @media screen and ( max-width: 500px )
-            margin-bottom: 2rem
+    .headerSocial-tel
+        font-size: 15px
 
-            &:last-child
-                margin-bottom: 0
+    .mainTitle h1
+        font-size: 20px
 
-        &:hover
-            .offer-title
-                box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.2)
+    .mainSupTitle h2
+        font-size: 16px
 
-            .button
-                background-color: $secondary-accent-color
-                box-shadow: none
-                opacity: 1
-                color: $positive-color
+    .mainscreenbutton
+        font-size: 16px
+        padding: 10px 15px
 
-        .offer-title
-            display: flex
-            align-items: center
-            margin-bottom: 1rem
-            background: $positive-color
-            border-radius: 0.5rem
-            box-shadow: 0 1.3rem 1.9rem 0 rgba(0, 0, 0, 0.14)
-            transition: 400ms
+    .popup-inner
+        margin-left: -151px
 
-            .offer-title__number
-                display: flex
-                align-items: center
-                justify-content: center
-                font-family: OpenSans-Bold
-                font-size: 2rem
-                color: $positive-color
-                width: 4rem
-                height: 4rem
-                background-image: linear-gradient( 145deg, rgb(4,70,124) 0%, rgb(3,10,53) 100%)
-                border-top-left-radius: 0.5rem
-                border-bottom-left-radius: 0.5rem
-
-            .offer-title__text
-                padding: 0 1rem
-                width: 65%
-
-        table
-            tr
-                td
-                    font-size: 0.65rem
-                    padding: 0.25rem 0
-                    text-align: left
-                    font-family: OpenSans-Bold
-
-                    &:last-child
-                        text-align: right
-                        font-family: OpenSans
-
-        .button
-            margin-top: 1rem
-            text-align: center
-
-        .offer-level
-            display: block
-            color: $secondary-text-color
-            margin-top: 0.5rem
-            text-align: center
-
-.footer-block
-    padding: 2rem 0
-    background: $dark-accent-color
-
-    .logo
-        display: flex
-        align-items: center
-        justify-content: flex-start
-
-        img
-            width: 10rem
-
-    .policy
-        display: flex
-        align-items: center
-        justify-content: flex-end
-
-        a
-            color: $positive-color
-
-            @media screen and ( max-width: 500px )
-                font-size: 0.7rem
-
-.modal-header
-    border-bottom: 0
-
-    .modal-title
-        font-family: OpenSans
-        font-size: 1.2rem
-        text-align: center
-
-.ajax-form
-    color: $negative-color
-
-    input
-        display: block
-
-    input
-        width: 100%
-        transition: 400ms
-        font-size: 0.9rem
-        font-family: OpenSans
-        text-align: center
-        color: $negative-color
-        border: 0.05rem solid $divider-color
-        margin-bottom: 1rem
-        padding: 0.5rem 1.5rem
-        border-radius: 0.25rem
-
-        &::placeholder
-            color: $negative-color
-
-        &:focus
-            border: 0.05rem solid $accent-color
-
-        @media screen and ( max-width: 500px )
-            margin-bottom: 0.5rem
-
-    .submit-form
-        background-color: $accent-color
-        color: $positive-color
-        cursor: pointer
-        transition: 400ms
-        box-shadow: 0 0.65rem 0.65rem 0 rgba(0, 0, 0, 0.1)
-
-        &:hover
-            background-color: $secondary-accent-color
-            box-shadow: none
-            opacity: 1
-            color: $positive-color
-
-.policy-page
-    padding: 2rem 0
-    color: $negative-color
-
-    p
-        margin-bottom: 1rem
+@media screen and ( max-width: 290px )
+    .mainscreenbutton
+        font-size: 13px
+        padding: 5px 10px

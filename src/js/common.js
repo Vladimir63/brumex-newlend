@@ -12,9 +12,11 @@ $(function() {
             data: data,
             success: function() {
                 $('.ajax-form')[0].reset();
+                // $('#recallModal').modal('hide');
+                // $('#thankyouModal').modal('show');
+                $('#hidden-window').fadeOut(500);
+                $('#thancs-modal').fadeIn(500);
                 ym(metrikaId, 'reachGoal', goal);
-                $('#recallModal').modal('hide');
-                $('#thankyouModal').modal('show');
             }
         })
         e.preventDefault();
@@ -66,4 +68,21 @@ $(function() {
     $('.ajax-form input[name="utm_term"]').val( getUrlParams['utm_term'] );
     $('.ajax-form input[name="yclid"]').val( getUrlParams['yclid'] );
 
+
+    // модалка
+    $('[data-src="#hidden-window"]').click(function () {
+        $('#hidden-window').fadeIn();
+    });
+
+    $('.popup-close').click(function () {
+        $('.popup-container').fadeOut();
+    });
+
+    $(document).click(function (e) {
+        if ($(e.target).is('.popup-container')) {
+            $('.popup-container').fadeOut(500);
+        }
+    });
+
+    
 });
